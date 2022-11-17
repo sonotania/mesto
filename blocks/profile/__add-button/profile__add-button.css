@@ -1,4 +1,4 @@
-.profile-info__add-button {
+.profile__add-button {
     background-color: black;
     color: white;
     border: 1px solid white;
@@ -8,12 +8,12 @@
     transition: opacity 0.3s ease;
 }
 
-.profile-info__add-button:hover {
+.profile__add-button:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 600px) {
-  .profile-info__add-button {
+  .profile__add-button {
     width: 88%;
   }
 }
