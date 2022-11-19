@@ -9,6 +9,6 @@
 
   @media screen and (max-width: 600px) {
     .elements {
-      width: calc(100% - 38px)
+      width: calc(100% - 38px);
     }
   }

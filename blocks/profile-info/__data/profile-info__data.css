@@ -1,6 +1,6 @@
 .profile-info__data {
     width: 336px;
-    display: flex ;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -8,14 +8,10 @@
 @media screen and (max-width: 600px) {
     .profile-info__data {
       margin: 0 auto 36px;
-      width: 88.125%;
       flex-direction: column;
       position: relative;
       align-items: center;
       justify-content: center;
       width: max-content;
-      
     }
-
-
   }
