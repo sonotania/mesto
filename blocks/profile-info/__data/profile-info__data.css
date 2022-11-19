@@ -1,18 +1,21 @@
 .profile-info__data {
-    max-width: 70%;
-    display: grid;
-    grid-template-columns: auto 17px;
-    grid-template-areas:
-    'name button'
-    'occupation occupation';
-    gap: 18px;
+    width: 336px;
+    display: flex ;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 @media screen and (max-width: 600px) {
     .profile-info__data {
       margin: 0 auto 36px;
-      max-width: 100%;
-      grid-column-gap: 10px;
-      grid-row-gap: 14px;
+      width: 88.125%;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      
     }
+
+
   }

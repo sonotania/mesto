@@ -20,5 +20,8 @@ background-position: center;
     width: 18px;
     height: 18px;
     background-size: 7.5px 7.5px;
+    position: absolute;
+    left: calc(100% - 10px);
+    top: 6px;
   }
 }

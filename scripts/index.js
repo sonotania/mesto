@@ -13,7 +13,7 @@ function clickEditProfileButtonHandler() {
     jobInput.value = userJob.textContent
 }
 
-function clickCloseProfilePopupButtonHandler() {
+function closeProfilePopup() {
     profilePopup.classList.remove('popup_opened')
 }
 
@@ -21,9 +21,9 @@ function formSubmitHandler (evt) {
     evt.preventDefault();
     userName.textContent = nameInput.value
     userJob.textContent = jobInput.value
-    profilePopup.classList.remove('popup_opened')
+    closeProfilePopup()
 }
 
 editProfileButton.addEventListener('click', clickEditProfileButtonHandler)
-profilePopupCloseBtn.addEventListener('click', clickCloseProfilePopupButtonHandler)
+profilePopupCloseBtn.addEventListener('click', closeProfilePopup)
 formElement.addEventListener('submit', formSubmitHandler);
