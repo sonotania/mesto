@@ -21,7 +21,7 @@ background-position: center;
     height: 18px;
     background-size: 7.5px 7.5px;
     position: absolute;
-    left: calc(100% - 10px);
+    right: calc(50% - 122px);
     top: 6px;
   }
 }

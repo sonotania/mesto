@@ -11,10 +11,9 @@
 @media screen and (max-width: 600px) {
     .profile-info__name {
       width: 189px;
-      /* margin-right: 10px; */
       font-size: 27px;
       line-height: 32.7px;
-      text-align: center;
-      
+      align-self: center;
+      margin: 0;
     }
   }
