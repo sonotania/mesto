@@ -3,9 +3,10 @@
   min-height: 330px;
   background-color: #fff;
   border-radius: 10px;
-  position: relative;
+  position: fixed;
   box-sizing: border-box;
   padding: 34px 36px;
+  top: calc(50vh - 165px);
 }
 
 @media screen and (max-width: 540px) {
