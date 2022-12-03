@@ -1,4 +1,6 @@
 .element__like-button {
+    background: url(../../../images/like.svg) center no-repeat;
+    background-size: contain;
     background-color: transparent;
     border: none;
     width: 22px;
@@ -10,4 +12,7 @@
     opacity: 0.6;
   }
 
+  .element__like-button_liked {
+    background-image: url(../../../images/liked.svg);
+  }
   
