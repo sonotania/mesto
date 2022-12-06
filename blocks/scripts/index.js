@@ -17,12 +17,12 @@ const jobInput = editFormElement.elements.about;
 const elementsContainer = document.querySelector(".elements");
 const cardTemplate = document.querySelector("#card-template").content;
 
-
+// Общая функция открытия попапа. Принимает на вход попап
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
 }
 
-
+// Общая функция закрытия попапа. Принимает на вход попап
 function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
 }
@@ -30,10 +30,10 @@ function closePopup(popupElement) {
 function openImagePopupHandler(event) {
   openPopup(imagePopup);
 
-
+  // Текст для названия места и для атрибута alt большого изображения берём из атрибута alt миниатюры. Event.target - миниатюра
   imagePopupBackground.setAttribute("src", event.target.src);
   imagePopupBackground.setAttribute("alt", event.target.alt);
-
+  // Для place-name создал css-файл popup__place-name. Стили там наугад написаны. Надо взять из фигмы
   imagePopupPlaceName.textContent = event.target.alt;
 }
 
@@ -45,7 +45,7 @@ function likeCardHandler(event) {
   event.target.classList.toggle("element__like-button_liked");
 }
 
-
+// Функция создания карточки, которая возвращает созданный элемент карточки
 function createCard(name, link) {
   const card = cardTemplate.querySelector(".element").cloneNode(true);
   const cardImage = card.querySelector(".element__image");
@@ -53,7 +53,8 @@ function createCard(name, link) {
   const cardDeleteBtn = card.querySelector(".element__delete-button");
   const cardLikeBtn = card.querySelector(".element__like-button");
 
-
+  // Как и попросил ревьюер, навешиваем слушатели событий на сердечко, корзину и миниатюру тут - при создании карточки.
+  // В итоге будет куча слушателей в документе. Когда мы учились, нам говорили, что так не гуд, что лучше повесить один слушатель на весь контейнер.
   cardImage.src = link;
   cardImage.alt = name;
   cardImage.addEventListener("click", openImagePopupHandler);
@@ -67,7 +68,7 @@ function createCard(name, link) {
   return card;
 }
 
-
+// Функция добавления новой карточки в контейнер, принимающая на вход созданный экземпляр карточки
 function addNewCard(cardElement) {
   const cardsContainer = document.querySelector(".elements");
 
@@ -103,9 +104,10 @@ function initCards() {
   ];
 
   initialCards.forEach((item) => {
-
+    // Сначала создаём карточку
     const cardInstance = createCard(item.name, item.link);
 
+    // Теперь добавляем её в контейнер
     addNewCard(cardInstance);
   });
 }
@@ -142,11 +144,11 @@ function editFormSubmitHandler(event) {
 function addFormSubmitHandler(event) {
   const placeInput = addFormElement.elements.place;
   const linkInput = addFormElement.elements.link;
-  
+  // Сначала создаём карточку
   const cardInstance = createCard(placeInput.value, linkInput.value);
 
   event.preventDefault();
-
+  // Теперь добавляем её в контейнер
   addNewCard(cardInstance);
   placeInput.value = "";
   linkInput.value = "";
